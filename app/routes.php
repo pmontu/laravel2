@@ -15,3 +15,20 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+Route::get('/home',function(){
+	return View::make('home');
+
+});
+Route::get('userslist',function(){
+	$users = User::all();
+	return $users;
+});
+Route::get('blogs',function(){
+	$blogs = Blog::all();
+	return $blogs;
+});
+
+Route::get('tests',function(){
+	$tests = tests::find(2);
+	return $tests->id;
+});
